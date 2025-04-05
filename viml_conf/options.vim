@@ -51,9 +51,6 @@ set expandtab       " expand tab to spaces so that tabs are spaces
 " Set matching pairs of characters and highlight matching brackets
 set matchpairs+=<:>,「:」,『:』,【:】,“:”,‘:’,《:》
 
-" I don't like relative numbers
-set number
-set nornu
 
 " Ignore case in general, but become case-sensitive when uppercase is present
 set ignorecase smartcase
@@ -133,7 +130,7 @@ set winborder=none
 " Insert mode key word completion setting
 set complete+=kspell complete-=w complete-=b complete-=u complete-=t
 
-set spelllang=en,cjk  " Spell languages
+set spelllang=en,de  " Spell languages
 set spellsuggest+=9  " show 9 spell suggestions at most
 
 " Align indent to next multiple value of shiftwidth. For its meaning,
@@ -145,9 +142,6 @@ set virtualedit=block  " Virtual edit is useful for visual block edit
 " Correctly break multi-byte characters such as CJK,
 " see https://stackoverflow.com/q/32669814/6064933
 set formatoptions+=mM
-
-" Tilde (~) is an operator, thus must be followed by motions like `e` or `w`.
-set tildeop
 
 set synmaxcol=250  " Text after this column number is not highlighted
 set nostartofline
@@ -186,3 +180,8 @@ set nowrap  " do no wrap
 set noruler
 
 set showcmdloc=statusline
+set colorcolumn=80
+set cursorline
+" I don't like relative numbers
+set number
+set nornu
