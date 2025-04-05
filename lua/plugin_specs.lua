@@ -85,15 +85,6 @@ local plugin_specs = {
     ft = { "lisp" },
   },
 
-  -- Super fast buffer jump
-  {
-    "smoka7/hop.nvim",
-    event = "VeryLazy",
-    config = function()
-      require("config.nvim_hop")
-    end,
-  },
-
   -- Show match number and index for searching
   {
     "kevinhwang91/nvim-hlslens",
@@ -138,7 +129,7 @@ local plugin_specs = {
     opts = {},
   },
   {
-    'clearaspect/onehalf',
+    "clearaspect/onehalf",
     lazy = false,
     priority = 1000,
   },
@@ -319,20 +310,10 @@ local plugin_specs = {
   },
 
   -- Better git log display
-  { "rbong/vim-flog", cmd = { "Flog" } },
   { "akinsho/git-conflict.nvim", version = "*", config = true },
-  {
-    "ruifm/gitlinker.nvim",
-    event = "User InGitRepo",
-    config = function()
-      require("config.git-linker")
-    end,
-  },
-
   {
     "sindrets/diffview.nvim",
   },
-
   {
     "kevinhwang91/nvim-bqf",
     ft = "qf",
