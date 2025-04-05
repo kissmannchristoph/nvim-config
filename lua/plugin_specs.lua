@@ -258,9 +258,6 @@ local plugin_specs = {
   -- Comment plugin
   { "tpope/vim-commentary", event = "VeryLazy" },
 
-  -- Multiple cursor plugin like Sublime Text?
-  -- 'mg979/vim-visual-multi'
-
   -- Show undo history visually
   { "simnalamburt/vim-mundo", cmd = { "MundoToggle", "MundoShow" } },
 
@@ -278,9 +275,6 @@ local plugin_specs = {
 
   -- Repeat vim motions
   { "tpope/vim-repeat", event = "VeryLazy" },
-
-  { "nvim-zh/better-escape.vim", event = { "InsertEnter" } },
-
   {
     "lyokha/vim-xkbswitch",
     enabled = function()
