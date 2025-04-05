@@ -276,7 +276,7 @@ nvim_tree.setup { -- BEGIN_DEFAULT_OPTS
   },
 } -- END_DEFAULT_OPTS
 
-keymap.set("n", "<space>s", require("nvim-tree.api").tree.toggle, {
+keymap.set("n", "<tab>s", require("nvim-tree.api").tree.toggle, {
   silent = true,
   desc = "toggle nvim-tree",
 })

@@ -9,5 +9,11 @@ require("conform").setup {
     javascript = { "prettierd", "prettier", stop_after_first = true },
     typescript = { "prettierd", "prettier", stop_after_first = true },
     vue = { "prettierd", "prettier", stop_after_first = true },
+    proto = { "buf", lsp_format = "fallback" },
+    format_on_save = {
+      -- I recommend these options. See :help conform.format for details.
+      lsp_format = "fallback",
+      timeout_ms = 500,
+    },
   },
 }

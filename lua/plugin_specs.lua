@@ -447,9 +447,6 @@ local plugin_specs = {
       picker = { enabled = true },
     },
   },
-  -- show and trim trailing whitespaces
-  { "jdhao/whitespace.nvim", event = "VeryLazy" },
-
   -- file explorer
   {
     "nvim-tree/nvim-tree.lua",
@@ -539,6 +536,20 @@ local plugin_specs = {
     event = "VimEnter",
     config = function()
       require("config.transparent")
+    end,
+  },
+  {
+    "echasnovski/mini.trailspace",
+    version = "*",
+    config = function()
+      require("mini.trailspace").setup()
+    end,
+  },
+  {
+    "ntpeters/vim-better-whitespace",
+    event = "VeryLazy",
+    config = function()
+      vim.g.strip_whitespace_on_save = 1
     end,
   },
 }

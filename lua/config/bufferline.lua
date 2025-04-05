@@ -45,6 +45,6 @@ require("bufferline").setup {
   },
 }
 
-vim.keymap.set("n", "<space>bp", "<cmd>BufferLinePick<CR>", {
+vim.keymap.set("n", "<Tab>bp", "<cmd>BufferLinePick<CR>", {
   desc = "pick a buffer",
 })

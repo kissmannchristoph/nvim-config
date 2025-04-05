@@ -31,17 +31,17 @@ vim.api.nvim_create_autocmd("LspAttach", {
       vim.lsp.buf.hover { border = "single", max_height = 25, max_width = 120 }
     end)
     map("n", "<C-k>", vim.lsp.buf.signature_help)
-    map("n", "<space>rn", vim.lsp.buf.rename, { desc = "varialbe rename" })
-    map("n", "<space>ca", vim.lsp.buf.code_action, { desc = "LSP code action" })
-    map("n", "<space>wa", vim.lsp.buf.add_workspace_folder, { desc = "add workspace folder" })
-    map("n", "<space>wr", vim.lsp.buf.remove_workspace_folder, { desc = "remove workspace folder" })
-    map("n", "<space>wl", function()
+    map("n", "<Tab>rn", vim.lsp.buf.rename, { desc = "varialbe rename" })
+    map("n", "<Tab>ca", vim.lsp.buf.code_action, { desc = "LSP code action" })
+    map("n", "<Tab>wa", vim.lsp.buf.add_workspace_folder, { desc = "add workspace folder" })
+    map("n", "<Tab>wr", vim.lsp.buf.remove_workspace_folder, { desc = "remove workspace folder" })
+    map("n", "<Tab>wl", function()
       vim.print(vim.lsp.buf.list_workspace_folders())
     end, { desc = "list workspace folder" })
 
     -- Set some key bindings conditional on server capabilities
     if client.server_capabilities.documentFormattingProvider and client.name ~= "lua_ls" then
-      map({ "n", "x" }, "<space>f", vim.lsp.buf.format, { desc = "format code" })
+      map({ "n", "x" }, "<Tab>f", vim.lsp.buf.format, { desc = "format code" })
     end
 
     -- Disable ruff hover feature in favor of Pyright
@@ -189,7 +189,6 @@ if utils.executable("lua-language-server") then
   }
 end
 
--- Rust
 require("lspconfig").rust_analyzer.setup {
   -- Server-specific settings. See `:help lspconfig-setup`
   settings = {

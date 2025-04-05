@@ -44,13 +44,13 @@ let g:vista_echo_cursor = 0
 " Stay in current window when vista window is opened
 let g:vista_stay_on_open = 0
 
-nnoremap <silent> <Space>t :<C-U>Vista!!<CR>
+nnoremap <silent> <Tab>t :<C-U>Vista!!<CR>
 
 """"""""""""""""""""""""vim-mundo settings"""""""""""""""""""""""
 let g:mundo_verbose_graph = 0
 let g:mundo_width = 80
 
-nnoremap <silent> <Space>u :MundoToggle<CR>
+nnoremap <silent> <Tab>u :MundoToggle<CR>
 
 """"""""""""""""""""""""""""better-escape.vim settings"""""""""""""""""""""""""
 let g:better_escape_interval = 200

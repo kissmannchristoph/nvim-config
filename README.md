@@ -90,7 +90,7 @@ Some of the shortcuts I use frequently are listed here. In the following shortcu
 | `<leader>fg`      | Normal        | Linux/macOS/Win | Fuzzy project-wide grepping in a floating window                         |
 | `<leader>ft`      | Normal        | Linux/macOS/Win | Fuzzy buffer tag searching in a floating window                          |
 | `<leader>fb`      | Normal        | Linux/macOS/Win | Fuzzy buffer switching in a floating window                              |
-| `<leader><Space>` | Normal        | Linux/macOS/Win | Remove trailing white spaces                                             |
+| `<leader><Tab>`   | Normal        | Linux/macOS/Win | Remove trailing white spaces                                             |
 | `<leader>v`       | Normal        | Linux/macOS/Win | Reselect last pasted text                                                |
 | `<leader>ev`      | Normal        | Linux/macOS/Win | Edit Nvim config in a new tabpage                                        |
 | `<leader>sv`      | Normal        | Linux/macOS/Win | Reload Nvim config                                                       |

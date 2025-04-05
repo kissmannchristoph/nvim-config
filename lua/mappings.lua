@@ -51,12 +51,12 @@ end, {
 
 -- Insert a blank line below or above current line (do not move the cursor),
 -- see https://stackoverflow.com/a/16136133/6064933
-keymap.set("n", "<space>o", "printf('m`%so<ESC>``', v:count1)", {
+keymap.set("n", "<Tab>o", "printf('m`%so<ESC>``', v:count1)", {
   expr = true,
   desc = "insert line below",
 })
 
-keymap.set("n", "<space>O", "printf('m`%sO<ESC>``', v:count1)", {
+keymap.set("n", "<Tab>O", "printf('m`%sO<ESC>``', v:count1)", {
   expr = true,
   desc = "insert line above",
 })
@@ -113,9 +113,6 @@ keymap.set("n", "/", [[/\v]])
 -- see https://vim.fandom.com/wiki/Set_working_directory_to_the_current_file
 keymap.set("n", "<leader>cd", "<cmd>lcd %:p:h<cr><cmd>pwd<cr>", { desc = "change cwd" })
 
--- Use Esc to quit builtin terminal
-keymap.set("t", "<Esc>", [[<c-\><c-n>]])
-
 -- Toggle spell checking
 keymap.set("n", "<F11>", "<cmd>set spell!<cr>", { desc = "toggle spell" })
 keymap.set("i", "<F11>", "<c-o><cmd>set spell!<cr>", { desc = "toggle spell" })
@@ -128,7 +125,7 @@ keymap.set("n", "cc", '"_cc')
 keymap.set("x", "c", '"_c')
 
 -- Remove trailing whitespace characters
-keymap.set("n", "<leader><space>", "<cmd>StripTrailingWhitespace<cr>", { desc = "remove trailing space" })
+keymap.set("n", "<leader><Tab>", "<cmd>StripTrailingWhitespace<cr>", { desc = "remove trailing space" })
 
 -- Copy entire buffer.
 keymap.set("n", "<leader>y", "<cmd>%yank<cr>", { desc = "yank entire buffer" })
@@ -238,3 +235,4 @@ end, { desc = "show cursor" })
 keymap.set("n", "<C-Down>", "<cmd>GitGutterNextHunk<cr>")
 keymap.set("n", "<C-Up>", "<cmd>GitGutterPrevHunk<cr>")
 keymap.set("n", "<C-=>", "<cmd>GitGutterPreviewHunk<cr>")
+

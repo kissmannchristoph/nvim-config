@@ -104,8 +104,15 @@ api.nvim_create_autocmd("CmdLineLeave", {
 })
 
 -- Always open nvim-tree
-api.nvim_create_autocmd({ "VimEnter" }, { 
+api.nvim_create_autocmd({ "VimEnter" }, {
   callback = function()
     require("nvim-tree.api").tree.open()
+  end,
+})
+
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = "*",
+  callback = function(args)
+    require("conform").format({ bufnr = args.buf })
   end,
 })
