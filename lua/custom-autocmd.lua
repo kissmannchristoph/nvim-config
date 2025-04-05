@@ -85,24 +85,6 @@ api.nvim_create_autocmd("VimResized", {
   command = "wincmd =",
 })
 
-local function open_nvim_tree(data)
-  -- check if buffer is a directory
-  local directory = vim.fn.isdirectory(data.file) == 1
-
-  if not directory then
-    return
-  end
-
-  -- create a new, empty buffer
-  vim.cmd.enew()
-
-  -- wipe the directory buffer
-  vim.cmd.bw(data.buf)
-
-  -- open the tree
-  require("nvim-tree.api").tree.open()
-end
-
 -- Do not use smart case in command line mode, extracted from https://vi.stackexchange.com/a/16511/15292.
 api.nvim_create_augroup("dynamic_smartcase", { clear = true })
 api.nvim_create_autocmd("CmdLineEnter", {
@@ -121,4 +103,9 @@ api.nvim_create_autocmd("CmdLineLeave", {
   end,
 })
 
-api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
+-- Always open nvim-tree
+api.nvim_create_autocmd({ "VimEnter" }, { 
+  callback = function()
+    require("nvim-tree.api").tree.open()
+  end,
+})

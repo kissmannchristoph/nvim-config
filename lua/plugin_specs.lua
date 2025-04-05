@@ -136,22 +136,30 @@ local plugin_specs = {
     dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" },
   },
   -- A list of colorscheme plugin you may want to try. Find what suits you.
-  { "navarasu/onedark.nvim", lazy = true },
-  { "sainnhe/edge", lazy = true },
   { "sainnhe/sonokai", lazy = true },
-  { "sainnhe/gruvbox-material", lazy = true },
-  { "sainnhe/everforest", lazy = true },
-  { "EdenEast/nightfox.nvim", lazy = true },
-  { "catppuccin/nvim", name = "catppuccin", lazy = true },
-  { "olimorris/onedarkpro.nvim", lazy = true },
-  { "marko-cerovac/material.nvim", lazy = true },
   {
-    "rockyzhang24/arctic.nvim",
-    dependencies = { "rktjmp/lush.nvim" },
-    name = "arctic",
-    branch = "v2",
+    "ricardoraposo/nightwolf.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {},
   },
-  { "rebelot/kanagawa.nvim", lazy = true },
+  {
+    'clearaspect/onehalf',
+    lazy = false,
+    priority = 1000,
+  },
+  {
+    "romanaverin/charleston.nvim",
+    name = "charleston",
+    priority = 1000,
+  },
+  {
+    "rebelot/kanagawa.nvim",
+    lazy = true,
+    config = function()
+      require("config.kanagawa")
+    end,
+  },
   { "nvim-tree/nvim-web-devicons", event = "VeryLazy" },
 
   {
