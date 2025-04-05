@@ -13,40 +13,70 @@ No effort is spent on maintaining backward compatibility.**
 
 # Install and setup
 
-See [doc here](docs/README.md) on how to install Nvim's dependencies, Nvim itself,
-and how to set up on different platforms (Linux, macOS).
+# Required
+
+## All
+- nodejs
+- npm
+- rust
+- prettier
+
+You should always install `rust` using `rustup`
+
+## macOS
+- Xcode (at least the commend line tools)
+- homebrew
+
+# Install required binaries
+
+```bash
+brew install neovim
+brew install pyright
+brew install rust-analyzer
+brew install stylua
+brew install black
+brew install isort
+brew install node
+brew install prettierd
+npm install -g vls
+npm install -g biomejs/biome
+npm install -g vim-language-server
+```
+
+Then copy this folder as `~/.config/nvim` and start neovim. That's all
 
 # Features #
 
-+ Plugin management via [Lazy.nvim](https://github.com/folke/lazy.nvim).
-+ Code, snippet, word auto-completion via [nvim-cmp](https://github.com/hrsh7th/nvim-cmp).
-+ Language server protocol (LSP) support via [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig).
-+ Git integration via [vim-fugitive](https://github.com/tpope/vim-fugitive).
++ Animated GUI style notification via [nvim-notify](https://github.com/rcarriga/nvim-notify).
++ Asynchronous code execution via [asyncrun.vim](https://github.com/skywind3000/asyncrun.vim).
++ Autoformatting/Prety via [conform](https://github.com/stevearc/conform.nvim)
++ Beautiful colorscheme via [sainnhe/gruvbox-material](https://github.com/sainnhe/gruvbox-material) and other colorschemes.
++ Beautiful statusline via [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim).
 + Better escaping from insert mode via [better-escape.vim](https://github.com/nvim-zh/better-escape.vim).
-+ Ultra-fast project-wide fuzzy searching via [fzf-lua](https://github.com/ibhagwan/fzf-lua).
++ Better quickfix list with [nvim-bqf](https://github.com/kevinhwang91/nvim-bqf).
++ Code editing using true nvim inside browser via [firenvim](https://github.com/glacambre/firenvim).
++ Code folding with [nvim-ufo](https://github.com/kevinhwang91/nvim-ufo) and [statuscol.nvim](https://github.com/luukvbaal/statuscol.nvim)
++ Code highlighting via [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter).
++ Code, snippet, word auto-completion via [nvim-cmp](https://github.com/hrsh7th/nvim-cmp).
++ Command line auto-completion via [wilder.nvim](https://github.com/gelguy/wilder.nvim).
++ Fast buffer jump via [hop.nvim](https://github.com/phaazon/hop.nvim).
 + Faster code commenting via [vim-commentary](https://github.com/tpope/vim-commentary).
 + Faster matching pair insertion and jump via [nvim-autopairs](https://github.com/windwp/nvim-autopairs).
-+ Smarter and faster matching pair management (add, replace or delete) via [vim-sandwich](https://github.com/machakann/vim-sandwich).
-+ Fast buffer jump via [hop.nvim](https://github.com/phaazon/hop.nvim).
-+ Powerful snippet insertion via [Ultisnips](https://github.com/SirVer/ultisnips).
-+ Beautiful statusline via [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim).
 + File tree explorer via [nvim-tree.lua](https://github.com/nvim-tree/nvim-tree.lua).
-+ Better quickfix list with [nvim-bqf](https://github.com/kevinhwang91/nvim-bqf).
-+ Show search index and count with [nvim-hlslens](https://github.com/kevinhwang91/nvim-hlslens).
-+ Command line auto-completion via [wilder.nvim](https://github.com/gelguy/wilder.nvim).
-+ User-defined mapping hint via [which-key.nvim](https://github.com/folke/which-key.nvim).
-+ Asynchronous code execution via [asyncrun.vim](https://github.com/skywind3000/asyncrun.vim).
-+ Code highlighting via [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter).
-+ Code editing using true nvim inside browser via [firenvim](https://github.com/glacambre/firenvim).
-+ Beautiful colorscheme via [sainnhe/gruvbox-material](https://github.com/sainnhe/gruvbox-material) and other colorschemes.
-+ Markdown writing and previewing via [vim-markdown](https://github.com/preservim/vim-markdown) and [markdown-preview.nvim](https://github.com/iamcco/markdown-preview.nvim).
-+ Animated GUI style notification via [nvim-notify](https://github.com/rcarriga/nvim-notify).
-+ Tags navigation via [vista](https://github.com/liuchengxu/vista.vim).
-+ Undo management via [vim-mundo](https://github.com/simnalamburt/vim-mundo)
-+ Code folding with [nvim-ufo](https://github.com/kevinhwang91/nvim-ufo) and [statuscol.nvim](https://github.com/luukvbaal/statuscol.nvim)
-+ Autoformatting/Prety via [conform](https://github.com/stevearc/conform.nvim)
 + Flutter-Support with [flutter-tools](https://github.com/nvim-flutter/flutter-tools.nvim)
++ Git integration via [vim-fugitive](https://github.com/tpope/vim-fugitive).
 + GitGutter vwith [vim-gitgutter](https://github.com/airblade/vim-gitgutter)
++ Language server protocol (LSP) support via [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig).
++ Plugin management via [Lazy.nvim](https://github.com/folke/lazy.nvim).
++ Powerful snippet insertion via [Ultisnips](https://github.com/SirVer/ultisnips).
++ Show search index and count with [nvim-hlslens](https://github.com/kevinhwang91/nvim-hlslens).
++ Smarter and faster matching pair management (add, replace or delete) via [vim-sandwich](https://github.com/machakann/vim-sandwich).
++ Sonokai Colorscheme
++ Tags navigation via [vista](https://github.com/liuchengxu/vista.vim).
++ Transparent background with [transpert](https://github.com/tribela/vim-transparent/)
++ Ultra-fast project-wide fuzzy searching via [fzf-lua](https://github.com/ibhagwan/fzf-lua).
++ Undo management via [vim-mundo](https://github.com/simnalamburt/vim-mundo)
++ User-defined mapping hint via [which-key.nvim](https://github.com/folke/which-key.nvim).
 + Yankring [yanky.nvim](https://github.com/gbprod/yanky.nvim)
 
 # Shortcuts

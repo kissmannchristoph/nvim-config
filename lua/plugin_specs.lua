@@ -129,12 +129,6 @@ local plugin_specs = {
       vim.keymap.set("n", "<leader>fb", "<cmd>FzfLua buffers<cr>", { desc = "Fuzzy search opened buffers" })
     end,
   },
-  {
-    "MeanderingProgrammer/markdown.nvim",
-    event = "VeryLazy",
-    opts = {},
-    dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" },
-  },
   -- A list of colorscheme plugin you may want to try. Find what suits you.
   { "sainnhe/sonokai", lazy = true },
   {
