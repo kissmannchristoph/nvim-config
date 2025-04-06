@@ -6,26 +6,23 @@ local M = {}
 -- Colorscheme to its directory name mapping, because colorscheme repo name is not necessarily
 -- the same as the colorscheme name itself.
 M.colorscheme_conf = {
-  sonokai = function()
-    vim.g.sonokai_enable_italic = 1
-    vim.g.sonokai_style = 'andromeda'
-    vim.g.sonokai_better_performance = 1
-    vim.g.sonokai_transparent_background = 1
-    vim.g.sonokai_dim_inactive_windows = 1
-
-    vim.cmd([[colorscheme sonokai]])
-  end,
   kanagawa = function()
     vim.cmd("colorscheme kanagawa-wave")
   end,
   nw = function()
     vim.cmd("colorscheme nightwolf")
   end,
-  onehalf = function()
-    vim.cmd([[colorscheme onehalf]])
-  end,
   cs = function()
     vim.cmd([[colorscheme charleston]])
+  end,
+  gruvbox = function()
+    vim.cmd([[colorscheme gruvbox]])
+  end,
+  tokyonight = function()
+    vim.cmd([[colorscheme tokyonight]])
+  end,
+  tokyodark = function()
+    vim.cmd([[colorscheme tokyodark]])
   end,
 }
 

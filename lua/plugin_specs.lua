@@ -121,17 +121,11 @@ local plugin_specs = {
     end,
   },
   -- A list of colorscheme plugin you may want to try. Find what suits you.
-  { "sainnhe/sonokai", lazy = true },
   {
     "ricardoraposo/nightwolf.nvim",
     lazy = false,
     priority = 1000,
     opts = {},
-  },
-  {
-    "clearaspect/onehalf",
-    lazy = false,
-    priority = 1000,
   },
   {
     "romanaverin/charleston.nvim",
@@ -145,8 +139,26 @@ local plugin_specs = {
       require("config.kanagawa")
     end,
   },
+  {
+    "ellisonleao/gruvbox.nvim",
+    lazy = true,
+    config = function()
+      require("config.gruvbox")
+    end,
+  },
+  {
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {},
+  },
+  {
+    "tiagovla/tokyodark.nvim",
+    config = function()
+      require("config.tokyodark")
+    end,
+  },
   { "nvim-tree/nvim-web-devicons", event = "VeryLazy" },
-
   {
     "nvim-lualine/lualine.nvim",
     event = "VeryLazy",
