@@ -2,99 +2,64 @@ local api = vim.api
 local keymap = vim.keymap
 local dashboard = require("dashboard")
 
-local conf = {}
-conf.header = {
-  "Okkkkkkkkkkkkkkkxkdolc::lc:clcclc:clcc:ol:;::okkxxxxkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
-  "kxxxxxxxxxxxxxxxxdlc:;;::;clccc::c:o:cc:cc::::cdxxxxxxxxxxxxxxxxxxkkxxxxxxxkkxkk",
-  "kxxxxxxxxxxxxxxxdolcl::c;llloc::cc:doccc::c:l:ccoxxxxxxxxxxxxxxxxxkkxxxxkxxxxxxk",
-  "kxxxxxxxxxxxxxddooolcoc:olol::clcc:od:llc;:l:o:cllxxxxxxxxxxxxxxxxkxxxxxxxxxxxxk",
-  "kxxxxxxxxxxxxdocollco:;lclcc;;o:olccdc:Ooc::c;o::ooxxxxxxxxxxxxxxkkkxxxxxxxxxxxk",
-  "kxxxxxxxxxxxoo:cc;:o:,;cccc:;o:;colll:cOk:c;l;ll;cooxxxxxxxxxxxxxkkxxxxxxxxxxxxx",
-  "Oxxxxxxxxxxxl;;c,,c:,'cccllclll:llklo:cxkd:;c::cc;looxxxxxxxxxxxxxkxxxxxxxxxxxxx",
-  "Oxxxxxxxxxxoc,::'',,',lllldocd0KKKXK00kdOxl,:cc;::;coxxxxxxxxxxxxxkxxxxxxxxxxxxx",
-  "Oxxxxxxxxxxl:,c;,dd;':lclokOKXXKKKXXXXXKxo:;;lc::;::cxxxxxxxxxxxxxxxxxxxxxxxxxxk",
-  "Oxxxxxxxxxx:;,c;oXOO;:ccoOXXXXXXXKOxdOXXKkO0d:;;c,,::dxxxxxxxxxxxxxxxxxxxxxxxxxx",
-  "Oxxxxxxxxxx::,:;:00k::cldKXOdlloxOKXK0KXXXXX0c,;c,,;lloxxxxxxxxxxxkxxxxxxxxxxxxk",
-  "Oxxxxxxxxxxc;',:'oOxllllxXXKkdlc:oxkXXXXXXXOod:,:,;;xxxxxxxxxxxxxxxxxxxxxxxxxxxk",
-  "Oxxxxxxxxxxd:,,;':0Okl:cOKKKKK000KXKXXXXXXKoloc,:,:dxxxxxxxxxxxxxxxxxxxxxxxxxxxk",
-  "Oxxxxxxxxxxxd;,;,''oKOcOkKKKKXXXXXXXXXXXXKOdd0o;::xxxxxxxxxxxxxxxxxxxxxxxxxxxxxk",
-  "Oxxxxxxxxxxxxx:;'','oX00KKKXXXXXXXXXXXXXXK0KKK:c:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
-  "Oxxxxxxxxxxxxdcl:',';OXXXXXXXXXXXXXXXXKKXXKKKxcclxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxk",
-  "Oxxxxxxxxxxxxxxxxo,':dKXXXXXXXXXXXXXXXKK0OXXOdxclxxxxxxxxxxxxxxxxxkxxxxxxxxxxxxx",
-  "Oxxxxxxxxxxxxxxxxo:l:xxOXXXXXXXXKKO0000KKXXOdxxxdxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
-  "OxxxxxxxxxxxxxxxxxxxkK0xk0KXXXXXXX0kxdooxKkxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
-  "Oxxxxxxxxxxxxdolc:::oXXK0kO0KXXXXXXXXKKKkxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxk",
-  "Oxxxxxxxxxo:;,,,;;;,lOkOOOkkxxkO0XXXK0kxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
-  "0xxxxxxxxd;;:cclloooooolllcc:;;;;,,''oxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
-  "0xxxxxxxxx;::cllloooolc::::;;;;;;;,',;lddooxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
-  "0xxxxxxxxxlc:::ccoooollcc::::;;;,,;:::::xOc'ckxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
-  "0xxxxxxxxxc;cc;:ccllcccc::::::;;;:;:::::::xl.:0KOxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
-  "0xxxxxxd:,c0XXk:,;;;;;;::::::;;;;;;;::::::;:;.:0K0xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
-  "0xxxxxkOo,',dXNXd;::::::::::;;;;;;:;;;;;;;;:;,.o00Oxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
-  "0xxxkKXXXKd,,:xKKo;;::::::::;;;;;;;;:::;;:::::::O0Oxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
-  "0xxOXXKKKKK0l;:cO0;::::::::::::;;;;;::::::::::::cokxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
-  "0x0XXKKKXKKKXk:;:0l::::::::::::ccc::::::::::::cccc:lxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
-  "00XXXXXXXKKXXK0c,;l;:::c:ccccccccccccc:::::::ccccllcldxxxxxxxxxxxxxxxxxxxxxxxxxx",
-  "KKKXXXXXXXXXXXK0:'';:::cccccccccccccccc:ccccccccccllccoxxxxxxxxxxxxxxxxxxxxxxxxx",
-  "KKKXXXXXXXXXXXKKk'';:cccccccccccccccccccccccccccclllllclxxxxxxxxxxxxxxxxxxxxxxxx",
-  "KKKKXXXXXXXXXXK0Kc'::cccccccccccccccccccccccccccccccccc:oxxxxxxxxxxxxxxxxxxxxxxx",
-  "KKKKKXXXXXXXXKK0Kd,::cccccccccccccccccccccc:::::::cccccc:xxxxxxxxxxxxxxxxxxxxxxx",
-  "KKKKKXXXXXXXXXXOKc;:;:::ccccccccccc::ccccc::::::::ccc:cc:oxxxxxxxxxxxxxxxxxxxxxx",
-  "OKKKKKXXXXXXXXXOl,::,;;:::::cccc:::::::::::;;::::::::::::lxxxxxxxxxxxxxxxxxxxxxx",
-  "OOKKKKXXXXXXXXXO',:;,,;;::::::::::::::::::;;:::::::::::::cxxxxxxxxxxxxxdolcdxxxx",
-  "OOKKKKXXXXXXXXXO',:;,,;;::::::::::::::::::;;:::::::::::::cxxxxxxxxxol::cll:oxxxx",
-  "OxKKKKXXXXXXXXXO',;,,,;;;:::::::::::::::::::;:::::::;:::::xxxxxxxdcccccc:oxxxxxx",
-}
-
-conf.center = {
-  {
-    icon = "󰈞  ",
-    desc = "Find  File                              ",
-    action = "FzfLua files",
-    key = "<Leader> f f",
-  },
-  {
-    icon = "󰈢  ",
-    desc = "Recently opened files                   ",
-    action = "FzfLua oldfiles",
-    key = "<Leader> f r",
-  },
-  {
-    icon = "󰈬  ",
-    desc = "Project grep                            ",
-    action = "FzfLua live_grep",
-    key = "<Leader> f g",
-  },
-  {
-    icon = "  ",
-    desc = "Open Nvim config                        ",
-    action = "tabnew $MYVIMRC | tcd %:p:h",
-    key = "<Leader> e v",
-  },
-  {
-    icon = "  ",
-    desc = "New file                                ",
-    action = "enew",
-    key = "e",
-  },
-  {
-    icon = "󰗼  ",
-    desc = "Quit Nvim                               ",
-    -- desc = "Quit Nvim                               ",
-    action = "qa",
-    key = "q",
-  },
-}
+local logo = [[
+                  Xxlc::lc:clcclc:clcc:ol:;:c0
+                NOdc:;;::;clccc::c:o:cc:cc::::oK
+               Kdolcl::c;llloc::cc:doccc::c:l:cck
+             NOdooolcoc:olol::clcc:od:llc;:l:o:cldN
+            Nxocollco:;lclcc;;o:olccdc:Ooc::c;o::odN
+            ko:cc;:o:,;cccc:;o:;colll:cOk:c;l;ll;codN
+           Nl;;c,,c:,'cccllclll:llklo:cxkd:;c::cc;loO
+           0c,::'',,',lllldocd0KKKXK00kdOxl,:cc;::;cd
+           k:,c;,dd;':lclokOKXXKKKXXXXXKxo:;;lc::;::cN
+           o;,c;oXOO;:ccoOXXXXXXXKOxdOXXKkO0d:;;c,,::K
+           l:,:;:00k::cldKXOdlloxOKXK0KXXXXX0c,;c,,;xx0
+           d;',:'oOxllllxXXKkdlc:oxkXXXXXXXOod:,:,;:N
+           K:,,;':0Okl:cOKKKKK000KXKXXXXXXKoloc,:,cX
+            Kc,;,''oKOcOkKKKKXXXXXXXXXXXXKOdd0o;:lN
+             Nc;'','oX00KKKXXXXXXXXXXXXXXK0KKK:clN
+             Nxko',';OXXXXXXXXXXXXXXXXKKXXKKKxock
+                 O,':dKXXXXXXXXXXXXXXXKK0OXXOK oO
+                 0cklxxOXXXXXXXXKKO0000KKXX0K   K
+                 NN KK0xk0KXXXXXXX0kxdooxK0N
+            NKOkdooodXXK0kO0KXXXXXXXXKKK0X
+          Ol;,,,;;;,lOkOOOkkxxkO0XXXK00X
+         N;;:cclloooooolllcc:;;;;,,''O
+          :::cllloooolc::::;;;;;;;,',;d0OO0N
+          kc:::ccoooollcc::::;;;,,;:::::xOc,oKXN
+         No;cc;:ccllcccc::::::;;;:;:::::::xl.:0XXX
+       Xo,c0XXk:,;;;;;;::::::;;;;;;;::::::;:;.:0K0K
+     NN0o,',dXNXd;::::::::::;;;;;;:;;;;;;;;:;,.o000
+   NXXXXXKd,,:xKKo;;::::::::;;;;;;;;:::;;:::::::O00N
+  XKXXKKKKK0l;:cO0;::::::::::::;;;;;::::::::::::cd0
+ N0XXKKKXKKKXk:;:0l::::::::::::ccc::::::::::::cccc:k
+XKXXXXXXXKKXXK0c,;l;:::c:ccccccccccccc:::::::ccccllcoK
+NKKXXXXXXXXXXXK0:'';:::cccccccccccccccc:ccccccccccllccO
+NKKXXXXXXXXXXXKKk'';:cccccccccccccccccccccccccccclllllcx
+NKKKXXXXXXXXXXK0Kc'::cccccccccccccccccccccccccccccccccc:O
+NKKKKXXXXXXXXKK0Kd,::cccccccccccccccccccccc:::::::cccccccN
+NKKKKXXXXXXXXXXOKc;:;:::ccccccccccc::ccccc::::::::ccc:cc:0
+XKKKKKXXXXXXXXXOl,::,;;:::::cccc:::::::::::;;::::::::::::x
+XOKKKKXXXXXXXXXO',:;,,;;::::::::::::::::::;;:::::::::::::d
+ 0KKKKXXXXXXXXXO',:;,,;;::::::::::::::::::;;:::::::::::::o
+ OKKKKXXXXXXXXXO',;,,,;;;:::::::::::::::::::;:::::::;::::c
+]]
 
 dashboard.setup {
-  theme = "doom",
+  theme = "hyper",
   shortcut_type = "number",
-  config = conf,
+  config = {
+    header = vim.split(logo, "\n"),
+    hide = {
+      statusline = false,
+    },
+    center = {},
+  },
 }
 
 api.nvim_create_autocmd("FileType", {
   pattern = "dashboard",
-  group = api.nvim_create_augroup("dashboard_enter", { clear = true }),
+  group = api.nvim_create_augroup("dashboard_enter", { clear = false }),
   callback = function()
     keymap.set("n", "q", ":qa<CR>", { buffer = true, silent = true })
     keymap.set("n", "e", ":enew<CR>", { buffer = true, silent = true })
