@@ -33,6 +33,7 @@ brew install black
 brew install isort
 brew install node
 brew install prettierd
+brew install fzf
 npm install -g vls
 npm install -g biomejs/biome
 npm install -g vim-language-server

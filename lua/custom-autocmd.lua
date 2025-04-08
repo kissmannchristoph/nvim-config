@@ -103,16 +103,31 @@ api.nvim_create_autocmd("CmdLineLeave", {
   end,
 })
 
--- Always open nvim-tree
+local function open_nvim_tree(data)
+  -- check if buffer is a directory
+  local directory = vim.fn.isdirectory(data.file) == 1
+
+  if not directory then
+    return
+  end
+
+  -- create a new, empty buffer
+  vim.cmd.enew()
+
+  -- wipe the directory buffer
+  vim.cmd.bw(data.buf)
+
+  -- open the tree
+  require("nvim-tree.api").tree.open()
+end
+
 api.nvim_create_autocmd({ "VimEnter" }, {
-  callback = function()
-    require("nvim-tree.api").tree.open()
-  end,
+  callback = open_nvim_tree,
 })
 
 vim.api.nvim_create_autocmd("BufWritePre", {
   pattern = "*",
   callback = function(args)
-    require("conform").format({ bufnr = args.buf })
+    require("conform").format { bufnr = args.buf }
   end,
 })
