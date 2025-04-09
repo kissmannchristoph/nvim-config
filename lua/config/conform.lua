@@ -10,6 +10,7 @@ require("conform").setup {
     typescript = { "prettierd", "prettier", stop_after_first = true },
     vue = { "prettierd", "prettier", stop_after_first = true },
     proto = { "buf", lsp_format = "fallback" },
+    dart = { "dart_format", lsp_format = "fallback" },
     format_on_save = {
       -- I recommend these options. See :help conform.format for details.
       lsp_format = "fallback",

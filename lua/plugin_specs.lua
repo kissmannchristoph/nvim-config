@@ -159,14 +159,6 @@ local plugin_specs = {
     end,
   },
   { "nvim-tree/nvim-web-devicons", event = "VeryLazy" },
-  {
-    "nvim-lualine/lualine.nvim",
-    event = "VeryLazy",
-    cond = firenvim_not_active,
-    config = function()
-      require("config.lualine")
-    end,
-  },
 
   {
     "akinsho/bufferline.nvim",
@@ -305,14 +297,6 @@ local plugin_specs = {
 
   -- Auto format tools
   { "sbdchd/neoformat", cmd = { "Neoformat" } },
-
-  -- Git command inside vim
-  {
-    "tpope/vim-fugitive",
-    config = function()
-      require("config.fugitive")
-    end,
-  },
 
   -- Better git log display
   { "akinsho/git-conflict.nvim", version = "*", config = true },
@@ -538,6 +522,7 @@ local plugin_specs = {
       vim.g.strip_whitespace_on_save = 1
     end,
   },
+  { "bluz71/nvim-linefly" },
 }
 
 ---@diagnostic disable-next-line: missing-fields
