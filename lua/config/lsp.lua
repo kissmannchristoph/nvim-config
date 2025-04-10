@@ -198,3 +198,4 @@ require("lspconfig").rust_analyzer.setup {
 
 -- Typescript, JS, Vue, ... Just web development
 require("lspconfig").biome.setup {}
+require("lspconfig").dartls.setup {}

@@ -235,4 +235,6 @@ end, { desc = "show cursor" })
 keymap.set("n", "<C-Down>", "<cmd>GitGutterNextHunk<cr>")
 keymap.set("n", "<C-Up>", "<cmd>GitGutterPrevHunk<cr>")
 keymap.set("n", "<C-=>", "<cmd>GitGutterPreviewHunk<cr>")
-
+keymap.set("n", "<C-S-Right>", "<cmd>tabnext<cr>")
+keymap.set("n", "<C-S-Left>", "<cmd>tabprevious<cr>")
+keymap.set("n", "tt", "<cmd>tabnew<cr>")

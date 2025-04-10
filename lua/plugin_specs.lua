@@ -486,7 +486,9 @@ local plugin_specs = {
       "nvim-lua/plenary.nvim",
       "stevearc/dressing.nvim",
     },
-    config = true,
+    config = function()
+      require("config.flutter-tools")
+    end,
   },
   {
     "airblade/vim-gitgutter",
