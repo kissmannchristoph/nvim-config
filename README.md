@@ -24,6 +24,8 @@ You should always install `rust` using `rustup`
 
 # Install required binaries
 
+- install `dcm` => https://dcm.dev/docs/quick-start/
+
 ```bash
 brew install neovim
 brew install pyright

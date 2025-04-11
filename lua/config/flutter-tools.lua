@@ -1,6 +1,6 @@
 require("flutter-tools").setup {
-  flutter_path = "/Users/iso/Development/flutter/bin",
-  flutter_lookup_cmd = nil, -- "where flutter",
+  flutter_path = "/Users/iso/Development/flutter/bin/flutter",
+  flutter_lookup_cmd = nil,
   fvm = false,
   widget_guides = { enabled = true },
   lsp = {
