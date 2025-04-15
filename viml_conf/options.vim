@@ -137,7 +137,7 @@ set virtualedit=block  " Virtual edit is useful for visual block edit
 " see https://stackoverflow.com/q/32669814/6064933
 set formatoptions+=mM
 
-set synmaxcol=250  " Text after this column number is not highlighted
+set synmaxcol=500  " Text after this column number is not highlighted
 set nostartofline
 
 " External program to use for grep command
@@ -170,7 +170,7 @@ set diffopt+=context:3  " context for diff
 set diffopt+=internal,indent-heuristic,algorithm:histogram
 set diffopt+=linematch:60
 
-set nowrap  " do no wrap
+set wrap  " do no wrap
 set noruler
 
 set showcmdloc=statusline
