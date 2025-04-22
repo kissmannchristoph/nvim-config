@@ -525,6 +525,7 @@ local plugin_specs = {
     end,
   },
   { "bluz71/nvim-linefly" },
+  { "f-person/nvim-sort-dart-imports" },
 }
 
 ---@diagnostic disable-next-line: missing-fields
