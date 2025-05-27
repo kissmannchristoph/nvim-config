@@ -7,6 +7,7 @@ require("conform").setup {
     rust = { "rustfmt", lsp_format = "fallback" },
     -- Conform will run the first available formatter
     javascript = { "prettierd", "prettier", stop_after_first = true },
+    js = { "prettierd", "prettier", stop_after_first = true },
     typescript = { "prettierd", "prettier", stop_after_first = true },
     vue = { "prettierd", "prettier", stop_after_first = true },
     proto = { "buf", lsp_format = "fallback" },
