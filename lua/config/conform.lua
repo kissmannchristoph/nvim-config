@@ -1,4 +1,5 @@
 require("conform").setup {
+  -- Check out https://neovimcraft.com/plugin/stevearc/conform.nvim/ for more info
   formatters_by_ft = {
     lua = { "stylua" },
     -- Conform will run multiple formatters sequentially
