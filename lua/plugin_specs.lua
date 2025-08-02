@@ -526,6 +526,26 @@ local plugin_specs = {
   },
   { "bluz71/nvim-linefly" },
   { "f-person/nvim-sort-dart-imports" },
+  {
+    "NeogitOrg/neogit",
+    dependencies = {
+      "nvim-lua/plenary.nvim", -- required
+      "sindrets/diffview.nvim", -- optional - Diff integration
+
+      -- Only one of these is needed.
+      "nvim-telescope/telescope.nvim", -- optional
+      "ibhagwan/fzf-lua", -- optional
+      "echasnovski/mini.pick", -- optional
+      "folke/snacks.nvim", -- optional
+    },
+  },
+  {
+    "tpope/vim-fugitive",
+    config = function()
+      -- Optional configuration can go here
+      -- vim.api.nvim_set_keymap("n", "<leader>gs", ":Gstatus<CR>", { noremap = true, silent = true })
+    end,
+  },
 }
 
 ---@diagnostic disable-next-line: missing-fields
