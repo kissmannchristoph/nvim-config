@@ -1,5 +1,5 @@
 # Introduction
-Special thanks to [imdatceleste]([https://github.com/imdatceleste]) who created this configuration
+Special thanks to [imdatceleste](https://github.com/imdatceleste) who created this configuration
 
 # Original Readme
 # Introduction
