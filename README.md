@@ -1,4 +1,8 @@
 # Introduction
+Special thanks to https://github.com/imdatceleste who created this configuration
+
+# Original Readme
+# Introduction
 
 This repo hosts my Nvim configuration for Linux and macOS
 `init.lua` is the config entry point for terminal Nvim.
